@@ -1,0 +1,74 @@
+/* image data  */
+
+.imagerow {
+    background-color: antiquewhite;
+    display: flex;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.imagecolumn {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+    background-color: white;
+    margin: 10px;
+}
+
+.imagebox {
+    height: 300px;
+    width: 300px;
+}
+
+/* video design */
+
+.videorow {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 20px;
+    background-color: antiquewhite;
+}
+
+.iframebox {
+    margin: 10px;
+    background-color: rgb(255, 255, 255);
+}
+
+::-webkit-scrollbar {
+    background-color: rgb(243, 229, 229);
+}
+
+::-webkit-scrollbar-corner {
+    background: rgba(44, 112, 124, 0.5);
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(70, 145, 180);
+}
+
+/* textrow desing */
+
+.textcolumn {
+    background-color: aqua;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    padding: 20px;
+    border: 10px solid rgb(255, 242, 208);
+}
+
+.textfinal {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: underline;
+}

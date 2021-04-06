@@ -1,0 +1,273 @@
+/* top head bar  */
+
+* {
+    margin: 0px;
+}
+
+/* setting html body to none */
+
+html.body {
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+}
+
+/* navbar design */
+
+.navbar {
+    display: flex;
+    flex-direction: row;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0px;
+    left: 0px;
+    z-index: 1;
+}
+
+.headerrow {
+    display: flex;
+    justify-content: space-between;
+    font-style: italic;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.icontopcall {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* setting brand logo desing */
+
+.brandlogo {
+    position: relative;
+    top: 50px;
+    background-color: rgb(233, 220, 203);
+    left: 20px;
+    border-radius: 10px;
+}
+
+/* desiging navigation link */
+
+.varbar li {
+    display: inline-block;
+    list-style: none;
+    padding: 10px;
+}
+
+/* adding design to conatc  */
+
+.spanstyle:hover {
+    box-shadow: 0px 0px 10px 4px rgba(4, 40, 102, 0.787);
+}
+
+/* link decor none */
+
+.varbar a {
+    text-decoration: none;
+}
+
+/* desigining hamburger */
+
+.hamburger i {
+    color: rgb(3, 0, 0);
+    padding: 4px;
+    top: 0px;
+    left: 0px;
+    z-index: 10;
+    width: 100%;
+    padding-left: 10px;
+}
+
+.hamburger {
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    width: 100%;
+    align-items: center;
+    border-radius: 10px;
+}
+
+/* desigigng brand logo */
+
+.brandlogo:hover {
+    background-color: transparent;
+    box-shadow: 0px 0px 10px 7px rgba(128, 128, 128, 0.335);
+}
+
+.hamburger i:hover {
+    color: rgb(236, 149, 9);
+}
+
+/* gallery nav */
+
+.gallerynav {
+    position: absolute;
+    top: 40px;
+    left: 40px;
+    z-index: 4;
+}
+
+.brandlogosmall:hover {
+    background-color: transparent;
+    box-shadow: 0px 0px 10px 7px rgba(128, 128, 128, 0.335);
+    border-radius: 20px;
+}
+
+/* setting link color  */
+
+.linkcolor a {
+    color: black;
+}
+
+.linkcolor a:hover {
+    color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 10px 7px rgba(128, 128, 128, 0.335);
+    border: 4px solid white;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+}
+
+/* setting contacts designs */
+
+.contacts {
+    margin: auto;
+    font-size: 0.7rem;
+    background-color: #00afe4;
+    height: 40px;
+    padding: 8px;
+    font-weight: bolder;
+    color: rgb(255, 255, 255);
+}
+
+.rotate {
+    transform: rotateY(180deg);
+    color: rgb(194, 182, 12);
+}
+
+.norotate {
+    letter-spacing: 1px;
+    color: rgb(194, 182, 12);
+}
+
+.fullload {
+    background-color: #00afe4;
+}
+
+/* setting media query for link */
+
+@media (max-width:1200px) {
+    .varbar {
+        display: none;
+    }
+    .contacts {
+        display: none;
+    }
+    .brandlogo {
+        display: none;
+    }
+}
+
+/* setting media query for small device */
+
+@media (min-width:1200px) {
+    .hamburger {
+        display: none;
+    }
+}
+
+/* settig the smalldevice to none before */
+
+.hiddenbars {
+    display: none;
+}
+
+.showsidebar {
+    display: flex;
+    flex-direction: column;
+    background-color: #11c7d8;
+    height: 100vh;
+    width: 80vw;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    z-index: 4;
+    animation: sideload 0.09s linear 0s 1 normal forwards;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+@keyframes sideload {
+    0% {
+        width: 0%;
+    }
+    25% {
+        width: 25%;
+    }
+    50% {
+        width: 50%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+.content {
+    list-style: none;
+    text-decoration: none;
+    margin: auto;
+}
+
+/* brand logo design for small device */
+
+.smbrandlogo:hover {
+    box-shadow: 0px 0px 15px 2px grey;
+    border-radius: 25px;
+}
+
+/* style for content list */
+
+.content li {
+    list-style: none;
+    display: flex;
+    padding: 10px;
+    margin: auto;
+    color: aliceblue;
+    justify-content: center;
+    align-items: center;
+}
+
+.content li a:hover {
+    color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 10px 7px rgba(128, 128, 128, 0.335);
+    border: 4px solid white;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 20px;
+}
+
+/* style for content link */
+
+.content a {
+    text-decoration: none;
+}
+
+.contenttimes {
+    margin: 0px;
+}
+
+.contenttimes:hover {
+    color: red;
+    width: 40px;
+}
+
+/* setting property to copyright  */
+
+.copyright {
+    font-size: 0.5rem;
+    text-decoration: underline;
+}

@@ -1,0 +1,110 @@
+html.body {
+    max-width: 100%;
+    max-height: 100;
+    overflow-x: hidden;
+}
+
+/* title font */
+
+.titlefont {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-decoration: underline;
+    font-weight: bold;
+    color: rgb(219, 139, 19);
+    font-family: Verdana, Geneva, Tahoma, sans-serif\;
+}
+
+/* defining the continer of form */
+
+.formclass {
+    background-color: #93e5e5;
+    padding: 15px;
+    border-radius: 5px;
+    margin: 20px;
+    box-shadow: 0px 0px 10px 1px rgb(141, 137, 137);
+}
+
+/* meida query for form background */
+
+@media (min-width:1200px) {
+    .formclass {
+        background-color: transparent;
+    }
+}
+
+/* setting background color none for form */
+
+.form-control {
+    background-color: #93e5e5;
+    border: none;
+    border-bottom: 2px solid;
+    border-radius: 0px;
+    border-bottom-style: solid;
+    border-bottom-color: black;
+    color: black;
+}
+
+/* desigining button */
+
+.submitbutton {
+    color: #000000;
+    background-color: #00ffbf;
+    border: 3px solid;
+}
+
+.submitbutton:hover {
+    background-color: rgb(6, 93, 151);
+    color: white;
+}
+
+.contacts {
+    display: flex;
+    background-color: antiquewhite;
+    justify-content: center;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 90%;
+    border-radius: 5px;
+    box-shadow: 0px 0px 10px 1px rgb(141, 137, 137);
+    padding-top: 25px;
+    padding-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 25px;
+}
+
+/* phone call link */
+
+.phonecalllink:hover {
+    color: rgb(240, 178, 8);
+}
+
+.phonecalllink {
+    cursor: pointer;
+    color: rgb(35, 114, 52);
+}
+
+@media(min-width:1200px) {
+    .contacts {
+        background-color: antiquewhite;
+        position: relative;
+        top: 300px;
+        right: 15px;
+        height: 600px;
+        box-shadow: 0px 0px 10px 1px rgb(141, 137, 137);
+    }
+}
+
+/* rotating phone  icon*/
+
+.fa-phone {
+    transform: rotateY(180deg);
+}
+
+input.ng-invalid.ng-touched {
+    border-left: 15px solid red;
+}
+
+textarea.ng-invalid.ng-touched {
+    border-left: 15px solid red;
+}

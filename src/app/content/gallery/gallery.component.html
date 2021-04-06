@@ -1,0 +1,61 @@
+<h4 style="text-align: center;text-decoration: underline;">Photos</h4>
+
+<div class="container-fluid">
+    <div class="imagerow">
+
+        <div class="imagecolumn" *ngFor="let image of imagedata ">
+            <img src="{{image.Imageurl}}" alt="ImageData" class="imagebox">
+            <h5 style="margin-top:8px; text-decoration: underline;">{{image.Image_ID}}.{{image.Service}} </h5>
+            <hr style="width:50%; margin: auto;">
+
+        </div>
+
+
+
+    </div>
+
+</div>
+
+<hr style="width: 50%;margin-left: auto;margin-right: auto;">
+
+<!-- <h4 style="text-align: center; text-decoration: underline;">Videos</h4> -->
+<!-- 
+<div class="container-fluid">
+    <div class="videorow">
+
+        <div class="iframebox" *ngFor="let data of youtubeitems">
+            <a href="https://www.youtube.com/watch?v=d2n3-4npF8s"></a>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/d2n3-4npF8s"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen></iframe>
+
+            {{data.id.videoId}}
+        </div>
+
+
+    </div>
+
+
+
+</div> -->
+
+
+<div class="container textcontainer">
+    <div class="row justify-content-center align-items-center textrow">
+        <div
+            class="col-sm-12 col-lg-12 col-md-12 col-xl-12 d-flex justify-content-center align-items-center textcolumn">
+            <div class="textfinal">
+                <h5>Liked Our Services? <br> Get Them Now</h5>
+            </div>
+            <div class="contact">
+                <a routerLink="/main/contact"><button class="btn btn-primary"> Contact US</button></a>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,96 @@
+/* desigining footer  */
+
+html.body {
+    width: 100%;
+    height: 100%;
+    padding: 0px;
+    margin: 0px;
+    overflow: hidden;
+}
+
+.mainfooter {
+    background-color: rgb(182, 158, 24);
+    clip-path: polygon(0% 2%, 0% 100%, 100% 100%, 100% 1%, 10% 5%);
+}
+
+.backgroundrasy {
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 150px;
+    background-color: #384158;
+    clip-path: polygon(10% 10%, 100% 1%, 100% 100%, 0% 100%, 0% 2%);
+}
+
+.contentcolumn {
+    display: flex;
+    justify-content: center;
+    color: goldenrod;
+    flex-direction: column;
+}
+
+.imagebox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.logoimage:hover {
+    background-color: transparent;
+    box-shadow: 0px 0px 5px 10px rgb(255, 255, 255);
+    border-radius: 10px;
+}
+
+/* bottomrow design */
+
+.mainrow {
+    background-color: #313133;
+    color: goldenrod;
+    display: flex;
+
+}
+
+.ulrow {
+    display: flex;
+    align-self: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+/* desigining the line */
+
+.ulrow li {
+    list-style: none;
+}
+
+.ulrow a {
+    color: goldenrod;
+    text-decoration: underline;
+}
+
+.columnstyle {
+    display: flex;
+    justify-content:space-between;
+    height: 50px;
+}
+
+.socaillink {
+    display: flex;
+    justify-content: center;
+    text-decoration: underline;
+}
+
+.linkitem li, a {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    color: goldenrod;
+    text-decoration: underline;
+}
+.mainrow2{
+   
+    display: flex;
+    justify-content: flex-end;
+}

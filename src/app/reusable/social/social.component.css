@@ -1,0 +1,72 @@
+/* socail link deisgn */
+.Sociallinkcont {
+    display: flex;
+    justify-content: space-around;
+    width: 50%;
+    margin: auto;
+  
+  }
+  
+  .sociallink {
+    display: flex;
+    background-color: white;
+    width: 40px;
+    height: 40px;
+    margin: auto;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    border-radius: 50%;
+    box-shadow: 0px 0px 15px 2px grey;
+  }
+  
+  .sociallink:hover {
+    box-shadow: 7px 7px 15px 0px rgb(32, 52, 53);
+  
+  
+  }
+  
+  /* setting media query for socail link  */
+   @media (max-width:400px) {
+    .Sociallinkcont {
+      width: 100%;
+      margin-bottom: 30px;
+  
+    }
+  
+    .sociallink {
+      width: 40px;
+      height: 40px;
+  
+    }
+    
+  
+  }
+  .sociallink a{
+    color: white;
+  }
+  
+  .fa-times {
+    cursor: pointer;
+  }
+  /* setting socail icon color */
+  .fa-instagram{
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    -webkit-background-clip: text;
+            /* Also define standard property for compatibility  */
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+    
+   
+  } 
+  .fa-youtube{
+    
+    color: red;
+  }
+  .fa-twitter {
+  color: #285AEB;
+  }
+  .fa-facebook {
+    color: #285AEB;
+    }
+  

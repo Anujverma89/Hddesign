@@ -1,0 +1,109 @@
+<!-- this is registration form section -->
+<!-- full width  container  -->
+<div class="container">
+    <div class="row justify-content-center align-items-end">
+        <h3 class="titlefont">Reach Us Now</h3>
+    </div>
+    <!-- fulll width row -->
+    <div class="row align-items-center justify-content-center">
+        <!-- div class column -->
+        <div class="col-xl-4 col-md-6 col-sm-12 col-xs-12 formclass">
+            <form #leadform="ngForm" (ngSubmit)="formsubmit(leadform.value)">
+                <!-- name field  -->
+                <div class="form-group">
+
+                    <input type="text" class="form-control" #name="ngModel" ngModel name="Name" placeholder="Name"
+                        required>
+
+                    <small *ngIf="name.invalid && name.touched" class="text-danger">
+                        This filed is required
+                    </small>
+                </div>
+                <!-- MObile no field -->
+                <div class="form-group">
+                    <input type="number" class="form-control" #mobile="ngModel" ngModel name='Mobileno'
+                        placeholder="Mobileno" required>
+                    <small *ngIf="mobile.invalid && mobile.touched" class="text-danger">
+                        This filed is required
+                    </small>
+                </div>
+
+                <!-- city field -->
+
+                <div class="form-group">
+                    <input type="text" class="form-control" #city="ngModel" ngModel name='City' placeholder="City"
+                        required>
+                    <small *ngIf="city.invalid && city.touched" class="text-danger">
+                        This filed is required
+                    </small>
+
+                </div>
+                <!-- email field  -->
+                <div class="form-group">
+                    <input type="email" class="form-control" #email="ngModel" ngModel name='Email_id'
+                        placeholder="Email-id" required>
+                    <small *ngIf="email.invalid && email.touched" class="text-danger">
+                        This filed is required
+                    </small>
+
+                </div>
+                <!-- selection field  -->
+                <div class="form-group">
+
+                    <select class="form-control" name='Services' #service="ngModel" ngModel required>
+                        <option>Space Planning</option>
+                        <option>Furniture Layouts/Design</option>
+                        <option>Floor plans</option>
+                        <option>Kitchen Modular & Bathroom Design</option>
+                        <option>Wardrobe design</option>
+                        <option>False ceiling</option>
+                        <option>Lightings</option>
+                        <option>Wall Paintings</option>
+                        <option>Art Decors</option>
+                        <option>Logo Design 3D Design view</option>
+
+                    </select>
+                    <small *ngIf="service.invalid && service.touched" class="text-danger">
+                        This filed is required
+                    </small>
+                </div>
+                <!-- text field  -->
+                <div class="form-group">
+                    <textarea name="" class="form-control" name="Text" id="" ngModel cols="30" rows="2"
+                        placeholder="Your message" required></textarea>
+                </div>
+                <!-- button area -->
+                <div class="col-md-12 text-center button">
+                    <button type="submit" class="btn btn-primary submitbutton"
+                        [disabled]="leadform.invalid || leadform.untouched">Submit</button>
+                </div>
+
+            </form>
+        </div>
+        <div class="col-xl-7 col-md-6 col-sm-12 col-lg-6 text-center contacts">
+            <!-- phone link -->
+            <div><a class="phonecalllink" href="{{PhoneNo}}" target="_blank" rel="noopener noreferrer"><i
+                        class="fas fa-phone fa-3x"></i><span style="padding: 10px; text-decoration: underline;">
+                        <h5>+91-8978204161</h5>
+                    </span></a></div>
+            <!-- email link -->
+            <div><a class="phonecalllink" href="{{Email_id}}" target="_blank" rel="noopener noreferrer"><i
+                        class="fas fa-envelope-open-text fa-3x"></i><span
+                        style="padding: 10px; text-decoration: underline;">
+                        <h5>hddesignhouse@gmail.com</h5>
+                    </span></a></div>
+            <!-- watsappchat link -->
+            <div style="cursor: pointer;"> <a class="phonecalllink" href="{{watsapp}}" target="_blank"
+                    rel="noopener noreferrer"><i class="fab fa-whatsapp fa-3x"></i><span
+                        style="padding: 10px; text-decoration: underline;">
+                        <h5>Start Chat</h5>
+                    </span></a></div>
+
+
+
+
+
+        </div>
+
+    </div>
+</div>

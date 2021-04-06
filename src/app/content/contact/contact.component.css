@@ -1,0 +1,87 @@
+/* socail link align */
+
+.companylocation {
+    display: flex;
+    background-color: #93e5e5;
+    width: 90%;
+    margin: auto;
+    padding: 20px;
+    box-shadow: 0px 0px 10px 1px rgb(141, 137, 137);
+    border-radius: 5px;
+    height: 400px;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+/* conatiner in container class */
+
+.copanydetails {
+    display: flex;
+    justify-content: space-between;
+    justify-content: baseline;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 40px;
+    width: 100%;
+}
+
+@media(min-width:1200px) {
+    .companylocation {
+        background-color: #93e5e5;
+        position: relative;
+        top: 20px;
+        right: 340px;
+        height: 350px;
+        box-shadow: 0px 0px 10px 1px rgb(141, 137, 137);
+    }
+    .googlemaps {
+        background-color: #93e5e5;
+        position: relative;
+        left: 190px;
+        top: -40px;
+        box-shadow: 0px 0px 10px 1px rgb(141, 137, 137);
+        margin-bottom: 250px;
+        overflow: hidden;
+    }
+    .hr {
+        position: relative;
+        top: 270px;
+    }
+    .contactcontent {
+        position: relative;
+        top: 270px;
+        left: 0px;
+        height: 100%;
+        margin-bottom: 100px;
+    }
+}
+
+/* adding css to map  */
+
+#map {
+    height: 400px;
+    width: 100%;
+}
+
+/* setting css to map conatiner  */
+
+.googlemaps {
+    background-color: #93e5e5;
+    margin-top: 10px;
+    width: 90%;
+    border-radius: 5px;
+    height: 400px;
+    box-shadow: 0px 0px 10px 1px rgb(141, 137, 137);
+}
+
+/* decorating mapimage */
+
+.text {
+    color: white;
+    position: absolute;
+    top: 40%;
+    left: 40%;
+}
+
+/* setting deisgn to content  */

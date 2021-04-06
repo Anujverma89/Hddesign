@@ -1,0 +1,89 @@
+<!-- defining the conatct section menu -->
+<div class="fullload">
+    <div class=" container contacts">
+        <div class="row headerrow">
+
+            <div>
+                <p style="margin: auto;">India's Best Interior Design House</p>
+            </div>
+
+            <div class="icontopcall">
+                <div> <i class="fas fa-phone rotate"></i><span class="spanstyle">+91-8978204161</span>
+                </div>
+                <div><i class="fas fa-phone rotate"></i> <span class="spanstyle">+91-9652548260</span></div>
+                <div> <i class="fas fa-envelope-open-text norotate"><span class="spanstyle"
+                            style="color: rgb(238, 238, 238); font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-style: italic;">hddesignhouse@gmail.com</span></i>
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+<hr>
+
+<!-- definfing the heading section -->
+
+<div class="navbar " id="navbar">
+    <div class='hamburger'>
+        <i class="fas fa-bars fa-2x" (click)="loadsidenav()"></i>
+        <a routerLink="/main/main"> <img src="../../../assets/hdlogo.png" class="brandlogosmall" alt="Brand logo"></a>
+    </div>
+    <div class="brandlogo">
+        <a routerLink="/main/main"> <img src="../../../assets/hdlogo.png" alt="Brand logo"></a>
+
+    </div>
+    <div class="varbar">
+        <ul class='linkcolor'>
+            <li><a routerLink="/main/main">Home</a></li>
+            <li><a routerLink="/main/service">Service</a></li>
+            <li><a routerLink="/main/gallery">Gallery</a></li>
+            <li><a routerLink="/main/about">About</a></li>
+            <li><a routerLink="/main/contact">Contact</a></li>
+
+
+        </ul>
+
+    </div>
+
+</div>
+<!-- creating the view for mobile navigation -->
+<!-- binding ngclass to toggle between classes -->
+<div #hide id="hide" class="container-fluid " [class]="hiddenbars">
+    <!--cross sign  -->
+    <div>
+        <i class="fas fa-times content fa-2x contenttimes" (click)='hidenav()'></i>
+    </div>
+    <!-- brand logo -->
+    <div class="smbrandlogo content">
+        <a routerLink="/main/main"> <img src="../../../assets/hdlogo.png" (click)="hidecontent()" alt="Brand logo"></a>
+
+    </div>
+
+    <!-- navigation link -->
+    <div class="smvarbar content">
+        <ul>
+            <li (click)="hidecontent()"><a routerLink="/main/main">Home</a></li>
+            <li (click)="hidecontent()"><a routerLink="/main/service">Service</a></li>
+            <li (click)="hidecontent()"><a routerLink="/main/gallery">Gallery</a></li>
+            <li (click)="hidecontent()"><a routerLink="/main/about">About</a></li>
+            <li (click)="hidecontent()"><a routerLink="/main/contact">Contact</a></li>
+
+
+        </ul>
+    </div>
+    <!-- socail component  -->
+    <app-social></app-social>
+
+
+    <div class="copyright">
+        <p>© <span>{{year}}</span> All right reserved</p>
+
+    </div>
+
+
+</div>
+<!-- this is the overlay property to hide on click -->

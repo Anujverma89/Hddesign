@@ -1,0 +1,525 @@
+body {
+    height: 100vh;
+}
+
+html.body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* settinga a */
+
+a {
+    color: white;
+}
+
+/* height class of the crousal container  */
+
+.hrabove {
+    margin: auto;
+    border: 1px solid rgb(243, 187, 3);
+}
+
+/* setting width to conatier main */
+
+.heightclass {
+    width: 100%;
+    background-color: red;
+}
+
+/* setting corusal colour */
+
+.fa-angle-left, .fa-angle-right {
+    color: aqua;
+}
+
+.fa-angle-left:hover, .fa-angle-right:hover {
+    color: rgb(228, 154, 7);
+}
+
+/* lines decor */
+
+.fa-grip-lines {
+    color: aqua;
+}
+
+.fa-grip-lines:hover {
+    color: rgb(228, 154, 7);
+}
+
+.fistimagetext {
+    position: absolute;
+    z-index: 1;
+    top: 30%;
+    right: 20px;
+}
+
+/* buttin desing */
+
+.buttonclick {
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+}
+
+.button {
+    display: block;
+    margin: auto;
+}
+
+/*this is design to main column */
+
+.hero {
+    background-color: red;
+}
+
+/* containertext */
+
+.containertext {
+    width: 80%;
+    margin: auto;
+}
+
+@media(min-width:1200px) {
+    .image {
+        height: 800px;
+    }
+    .imagecont {
+        height: 400px;
+        width: 97%;
+        overflow: hidden;
+        padding-top: 10px;
+    }
+}
+
+.image:hover {
+    filter: blur(5px)hue-rotate(10deg)grayscale(100%);
+    -webkit-filter: blur(5px)hue-rotate(10deg)grayscale(40%);
+}
+
+/* desiging image text */
+
+.fistimagetext {
+    width: 70%;
+    margin: auto;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
+    font-weight: bold;
+    color: rgb(0, 0, 0);
+    text-decoration: underline;
+    animation: textanima .5s linear 0s 1 normal forwards;
+    background-color: #daa520;
+    border-radius: 50px;
+}
+
+.fistimagetext a {
+    color: black;
+}
+
+/* animation to text of header */
+
+@keyframes textanima {
+    0% {
+        top: 0px;
+    }
+}
+
+/* hover effect on button */
+
+.buttonclick:hover {
+    background-color: red;
+}
+
+/* display none below 1200px */
+
+.bigscreeen {
+    margin-top: 2px;
+}
+
+/* crousalbutton */
+
+.crousalbutton {
+    background-color: rgb(0, 247, 255);
+    border: 2px solid goldenrod;
+}
+
+.crousalbutton:hover {
+    background-color: rgb(255, 239, 17);
+    color: black;
+}
+
+/* carddesign */
+
+.cardrow {
+    height: 500px;
+    display: flex;
+}
+
+.cardbody {
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+/* card body main */
+
+.cardboadymain {
+    position: relative;
+    width: 350px;
+    display: flex;
+    height: 450px;
+    background-color: rgb(251, 249, 235);
+    flex-direction: column;
+    align-self: center;
+    border: 1px solid;
+    box-shadow: 0px 0px 4px 2px grey;
+    border-radius: 5px;
+}
+
+/* imagedeaign */
+
+.imagecard {
+    height: 50%;
+    width: 95%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2px;
+}
+
+.cardbdoay {
+    width: 300px;
+}
+
+/* position of the card above */
+
+
+
+.carousel-indicators {
+    z-index: 1;
+}
+
+/* introdesing */
+
+
+/*original desing */
+
+.btngethis {
+    border-radius: 20px;
+    background-color: transparent;
+    border: 2px solid #daa520;
+}
+
+.btngethis:hover {
+    background-color: rgb(36, 229, 255);
+    color: white;
+}
+
+.imagecont {
+    height: 100%;
+    width: 97%;
+    overflow: hidden;
+    padding-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.imagenextprof {
+    height: 300px;
+    width: 300px;
+    margin: auto;
+}
+
+/* designign the container image */
+
+@media(max-width:300px) {
+    .imageback {
+        width: 80%;
+        height: 80%;
+        margin: auto;
+        display: block;
+        margin-top: 50px;
+    }
+    .designcontainer {
+        width: 99%;
+        position: relative;
+        top: 0px;
+        left: 0px;
+        margin-top: 5px;
+        padding-top: 20px;
+        background-image: url(../../../assets/svgdesign.svg);
+        background-size: 200px;
+        background-position: left 10% top 10%;
+    }
+}
+
+.designcontainer {
+    height: 350px;
+    width: 100%;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin-top: 5px;
+    padding-top: 20px;
+    background-image: url(../../../assets/svgdesign.svg);
+    background-repeat: no-repeat;
+    background-position: top 150% left 60%;
+}
+
+/* design */
+
+.design {
+    margin-top: 20px;
+    width: 97%;
+}
+
+/* style to phone icom */
+
+.fa-phone-square {
+    transform: rotate(180deg);
+}
+
+/* desgingg the main div */
+
+.maindiv {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 5px;
+    justify-content: center;
+}
+
+/* designign flex tiem in line */
+
+.uline {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+
+.columnparent {
+    position: relative;
+}
+
+/* hoverfeect on image */
+
+/* desiging the image contactsus */
+
+.maindiv::before {
+    content: "-  -   -   -  ";
+    font-size: 40px;
+}
+
+.maindiv::after {
+    content: "-   -   -   - ";
+    font-size: 40px;
+}
+
+.linkitem {
+    color: #05aac7;
+}
+
+/* desigign the vertical line */
+
+.linkitem:hover {
+    color: red;
+    transform: rotate(30deg);
+    padding-top: 10px;
+    padding-left: 20px;
+}
+
+/* image design */
+
+.h5text {
+    display: flex;
+    justify-content: center;
+    background-color: antiquewhite;
+    border-radius: 15px;
+}
+
+.h5text:hover {
+    background-color: aqua;
+    color: white;
+}
+
+.imageback:hover {
+    margin-left: 20px;
+    margin-top: 40px;
+}
+
+.designcontainer {
+    background-color: aqua;
+}
+
+.headingachievement {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.maindibutton {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 5px;
+    justify-content: center;
+}
+
+/* why we section design */
+
+.imagewhywe {
+    height: 100px;
+    width: 100px;
+}
+
+.classimage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.rowdesign {
+    background-color: rgb(0, 234, 255);
+    width: 100%;
+    margin: auto;
+}
+
+/* call us section */
+
+.phoneicon {
+    transform: rotate(180deg);
+}
+
+.callsection {
+    background-color: rgb(0, 234, 255);
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 95%;
+    height: 150px;
+}
+
+.phonerow {
+    width: 100%;
+    margin: auto;
+}
+
+/* buttondesing */
+
+.callbutton {
+    width: 220px;
+    background-color: rgb(210, 255, 143);
+    border-radius: 40px;
+}
+
+.callbutton:hover {
+    background-color: rgb(251, 231, 49);
+}
+
+/* phoneicondesing */
+
+.phoneicon {
+    color: white;
+}
+
+.phoneicon:hover {
+    border: 6px solid rgb(0, 0, 0);
+    padding: 20px;
+    border-radius: 50%;
+    animation: borderanima 1s linear 3 normal forwards;
+}
+
+@keyframes borderanima {
+    0% {
+        border: 6px solid rgb(255, 255, 255);
+    }
+    25% {
+        border: 6px solid yellow;
+    }
+    50% {
+        border: 6px solid green;
+    }
+    75% {
+        border: 6px solid white;
+    }
+    100% {
+        border: 6px solid rgb(220, 243, 8);
+    }
+}
+
+/* covid container */
+
+.covidcontainer {
+    position: relative;
+    top: 0px;
+    left: 0px;
+    margin-top: 50px;
+}
+
+.covidrow {
+    background-color: rgb(0, 234, 255);
+    width: 100%;
+    margin: auto;
+}
+
+.covidcol {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    top: -50px;
+}
+
+/* iconcovid */
+
+.covidimage:hover {
+    padding-top: 10px;
+    padding-left: 20px;
+    filter: contrast(200%) saturate(200%);
+}
+
+/* winston conatiner desinng */
+
+.wanstoncontainer {
+    background-image: url('../../../assets/background.jpg');
+    height: 300px;
+    margin-top: 20px;
+    color: white;
+    background-attachment: fixed;
+    background-repeat: repeat-x;
+}
+
+.winstonmainrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    background-color: #00457e;
+    opacity: .9;
+}
+
+.maintextwinston {
+    border: 4px solid white;
+    padding: 30px;
+    -webkit-backdrop-filter: blur(100px);
+    backdrop-filter: blur(100px)grayscale(0.1);
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.flextextcolumn {
+    display: flex;
+    justify-content: center;
+}
+
+.socaillcontent {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 60px;
+}

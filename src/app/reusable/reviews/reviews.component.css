@@ -1,0 +1,77 @@
+/* main */
+
+html.body {
+    margin: 0px;
+    padding: 0px;
+    max-width: 100%;
+    max-height: 100%;
+    overflow-x: hidden;
+}
+
+.reviewcard {
+    max-width: 400px;
+    max-height: 400px;
+    background-color: antiquewhite;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 10px 1px rgb(141, 137, 137);
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.profileimage {
+    border: 2px solid;
+    border-radius: 20px;
+    height: 60px;
+    width: 60px;
+    overflow: hidden;
+}
+
+/* image deisgn */
+
+/* cardconatiner */
+
+.cardcontainer {
+    display: flex;
+    max-width: 400px;
+    max-height: 400px;
+    background-color: antiquewhite;
+    box-sizing: border-box;
+    box-shadow: 0px 0px 10px 1px rgb(141, 137, 137);
+    margin-top: 20px;
+    margin-bottom: 30px;
+    flex-direction: column;
+}
+
+.cardimage {
+    height: 80%;
+    width: 100%;
+    margin: auto;
+}
+
+.imagereview {
+    width: 90%;
+    height: 90%;
+    overflow: hidden;
+}
+
+.fa-2x {
+    color: aqua;
+}
+
+.imagebox {
+    height: 60px;
+    width: 60px;
+    border-radius: 200px;
+    margin-left: 10px;
+    margin-top: 8px;
+}
+
+.profileimage1 {
+    display: flex;
+    width: 100%;
+}
+
+.headingrow {
+    display: flex;
+    width: 100%;
+}
