@@ -38,6 +38,7 @@ exports.postImageData = (req, res) => {
         file.mv(path, (err) => {
             if (err) {
                 console.log(err);
+                res.status(500).send(err);
             } else {
 
                 imageModel.postImageData(imageData, newName, (err, result) => {
