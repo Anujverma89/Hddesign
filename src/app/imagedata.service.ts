@@ -11,13 +11,13 @@ export class ImagedataService {
 
   // fetching data from database
 
-  vidoedata: string = "http://localhost:3000/video";
-  imagedata: string = "http://localhost:3000/image";
-  customerData: string = "http://localhost:3000/customer";
-  socialData: string = "http://localhost:3000/social";
-  reviewData: string = "http://localhost:3000/review";
-  admindata: string = "http://localhost:3000/admin";
-  loginData: string = "http://localhost:3000/login";
+  vidoedata: string = "/video";
+  imagedata: string = "/image";
+  customerData: string = "/customer";
+  socialData: string = "/social";
+  reviewData: string = "/review";
+  admindata: string = "/admin";
+  loginData: string = "/login";
   // apiKey: string = "AIzaSyC_9_pPBPQb7sbMzf9BtPeWTFSPydeOSoM";
 
   // httperr refrence 

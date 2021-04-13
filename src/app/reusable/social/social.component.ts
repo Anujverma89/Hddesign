@@ -10,7 +10,7 @@ export class SocialComponent implements OnInit {
   facebookurl="https://www.facebook.com/Hdinteriordesigns";
   Twitterurl="https://twitter.com/hd_interior";
   instagramurl="https://instagram.com/hd_interor";
-  youtubeurl="https://www.youtube.com/channel/UCwzKdn1qJmV48SC_7fEuS1A";
+  youtubeurl="https://www.youtube.com/channel/UCFU_a4JlMaPrXYyJ9nIH1xA";
 
   constructor() { }
 
