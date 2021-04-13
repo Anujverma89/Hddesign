@@ -43,17 +43,31 @@ exports.postDataIntoTable = (req, res) => {
                 Reviewmodel.postDataIntoTable(reviewData, newName, (err, result) => {
                     if (err) {
                         console.log(err);
-                        res.status(400).send("Unable to isert data");
+                        res.status(400).render('pages/reviews', { message: "unable to post review", data: "" });
                         return;
                     } else {
-                        res.status(200).send("inserted data successfuly");
+
+                        Reviewmodel.getAllReviews((err, result) => {
+                            if (err) {
+                                console.log(err);
+                                res.status(200).send(err);
+                            } else {
+                                if (result.length == 0) {
+                                    res.status(200).send("no data found");
+                                    return;
+                                }
+                                else {
+                                    res.status(200).render('pages/reviews', { message: "Review created successfully", data: result });
+                                }
+                            }
+                        })
                     }
                 })
             }
         });
 
     } else {
-        res.status(400).send("Only Jpg & png file type is allowed");
+        res.status(400).render('pages/reviews', { message: "Only Png && Jpg are allowed", data: "" });
     }
 }
 
@@ -89,9 +103,23 @@ exports.deleteDataWithId = (req, res) => {
             res.status(400).send("no data found")
         } else {
             if (result.affectedRows == 0) {
-                res.status(200).send("The data your are trying to delete could not be found")
+                res.status(200).render('pages/reviews', { message: "No review found ", data: "" });
             } else {
-                res.status(200).send("data seleted successfully")
+                Reviewmodel.getAllReviews((err, result) => {
+                    if (err) {
+                        console.log(err);
+                        res.status(200).send(err);
+                    } else {
+                        if (result.length == 0) {
+                            res.status(200).send("no data found");
+                            return;
+                        }
+                        else {
+                            res.status(200).render('pages/reviews', { message: "Review deleted successfully ", data: result });
+                        }
+                    }
+                })
+
             }
         }
     })

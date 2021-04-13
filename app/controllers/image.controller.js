@@ -1,7 +1,4 @@
 // importing the necessary requirements
-
-const { rawListeners } = require('../dbconfig/db');
-const Imagemodel = require('../models/image.model');
 const imageModel = require('../models/image.model');
 
 
@@ -16,11 +13,10 @@ exports.getAllImageData = (req, res) => {
         } else {
             if (result == 0) {
                 console.log("no data found")
-                res.status(200).send("No data found");
-
+                res.status(200).send('No data found')
             } else {
-                console.log(result);
                 res.status(200).send(result);
+
             }
         }
     })
@@ -47,10 +43,19 @@ exports.postImageData = (req, res) => {
                 imageModel.postImageData(imageData, newName, (err, result) => {
                     if (err) {
                         console.log(err);
-                        res.status.send("Could not store data", err)
+                        res.status(500).send("Could not store data", err)
                     }
                     else {
-                        res.status(200).send("data insrted into table successfully");
+                        imageModel.getAllImageData((err, result) => {
+                            if (err) {
+                                console.log(err);
+                                res.status(500).send("internal server error")
+                            } else {
+
+                                res.status(200).render('pages/image', { message: "Image created successfully", data: result });
+                            }
+
+                        })
                     }
                 })
 
@@ -71,11 +76,11 @@ exports.getDataWithId = (req, res) => {
             console.log(err);
         } else {
             if (result.length === 0) {
-                res.status(200).send("no data foound");
+                res.status(200).render('pages/image', { message: "No image found" });
                 return;
             }
             else {
-                res.status(200).send(result);
+                res.status(200).render('pages/image', { message: result });
             }
 
         }
@@ -93,12 +98,11 @@ exports.deleteImageById = (req, res) => {
             res.status(200).send(err);
         } else {
             if (result.affectedRows === 0) {
-                console.log("no data found");
-                res.send("no data found")
+                res.status(200).render('pages/image', { message: "No image found" });
                 return;
             }
             console.log(result);
-            res.status(200).send("successfully deleted id");
+            res.status(200).render('pages/image', { message: "Deleted item successfully" });
         }
 
     })
@@ -111,9 +115,9 @@ exports.deleteImageById = (req, res) => {
 exports.deleteaAllData = (req, res) => {
     Imagemodel.deleteAllData((err, result) => {
         if (err) {
-            res.status(400).send("Failed to delete")
+            res.status(500).send("Internal server error|| Failed to delete")
         } else {
-            res.status(200).send("Data all deleted successfully")
+            res.status(200).render('pages/image', { message: "Deleted data successully" });
 
         }
 
@@ -142,12 +146,12 @@ exports.updateData = (req, res) => {
                 Imagemodel.updateData(id, reqData, newName, (err, result) => {
                     if (err) {
                         console.log(err);
-                        res.status(400).send("failed to update")
+                        res.status(500).send("internal server error || failed to update")
                     } else {
                         if (result.affectedRows == 0) {
-                            res.status(200).send("No rows matched")
+                            res.status(200).render('pages/image', { message: "No rows matched" });
                         } else {
-                            res.status(200).send("Updated colum successfully");
+                            res.status(200).render('pages/image', { message: "Item updated successfully" });
                         }
 
                     }

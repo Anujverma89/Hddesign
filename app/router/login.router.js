@@ -4,6 +4,7 @@ const router = express.Router();
 const loginController= require('../controllers/login.controller');
 
 router.post('/',loginController.adminLogin)
+router.get('/',loginController.loginPage)
 
 
 

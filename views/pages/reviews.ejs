@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- iocluding ejs head file -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <!-- bootstarp link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <title>Admin panel || review_section</title>
+</head>
+
+
+
+<body>
+
+    <style>
+        .imagetopic {
+            height: 40px;
+            width: 40px;
+        }
+
+
+
+        /* tablle style */
+        /* styling image table */
+
+        /* table desing */
+
+        .fa-trash {
+            color: red;
+            cursor: pointer;
+        }
+
+        .fa-pen {
+            color: rgb(216, 128, 14);
+        }
+
+
+        thead {
+            background-color: antiquewhite;
+        }
+
+        th {
+            margin: 40px;
+        }
+
+        table,
+        td,
+        th {
+            padding-left: 20px;
+            padding-right: 20px;
+            text-align: center;
+            margin: auto;
+        }
+
+        table {
+            margin: 30px;
+        }
+
+        tr:nth-child(odd) {
+            background-color: rgb(66, 235, 241);
+        }
+
+        thead,
+        th,
+        tr,
+        td {
+            border: 1px solid;
+        }
+
+        .imagebox {
+
+            height: 40px;
+            width: 40px;
+        }
+
+        .for2mbody {
+            background-color: aqua;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-radius: 20px;
+            margin-top: 50px;
+        }
+
+        /* inpput validdation */
+
+        input.ng-touched.ng-invalid {
+            border-left: 20px solid red;
+        }
+    </style>
+
+
+
+
+    <!-- header sectio -->
+    <section>
+        <!-- this is the header section -->
+        <%-include('../partials/header')%>
+    </section>
+
+    <div class="conatiner-fluid">
+        <div class="row justify-content-center align-items-center">
+
+            <div class="col-sm-12 col-xl-6 col-lg-6 col-md-6 align-items-center justify-content-center text-center"
+                style="background-color: antiquewhite ; border-radius: 25px; margin-bottom: 40px; margin-top: 40px;">
+
+
+                <h1>
+                    Create Reviews
+                </h1>
+
+                <div>
+
+
+                    <% if(message.length !==0){%>
+
+                        <div class="alert alert-success">
+                            <%=message%>
+
+                        </div>
+
+                        <%}%>
+                </div>
+
+                <form action="/review" method="POST" autocomplete="off" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="Username">Username</label>
+                        <input type="text" class="form-control" name="Name" id="username" placeholder="Name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Image</label>
+                        <input type="file" class="form-control" name="Image" id="phoneno" placeholder="Image " required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Location</label>
+                        <input type="text" class="form-control" name="Location" id="email" placeholder="Location"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Star</label>
+                        <input type="number" class="form-control" name="Star" id="password" placeholder="Star" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Text</label>
+                        <input type="text" class="form-control" id="confirmpassword" name="Text" placeholder="Text "
+                            required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+
+
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="container-fluid">
+        <div class="row justify-content-center align-items-center">
+
+            <div class="col-sm-12 col-lg-12 col-md-12 col-xl-12 justify-content-center align-items-center"
+                style="display: flex; justify-content: center; align-items: center; margin-bottom: 40px;">
+
+
+                <% if(data.length!=="" ){%>
+
+                    <table>
+
+                        <thead>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Image</th>
+                            <th>Location</th>
+                            <th>Star</th>
+                            <th>Service</th>
+                            <th>Delete</th>
+
+                        </thead>
+
+                        <tbody>
+
+
+                            <% data.forEach(function(data){%>
+                                <tr>
+                                    <td>
+                                        <%=data.Review_id%>
+                                    </td>
+                                    <td>
+                                        <%=data.Name%>
+                                    </td>
+                                    <td><img src="<%=data.Image%>" alt="Imagedata" class="imagetopic"> </td>
+
+                                    <td>
+                                        <%=data.Location%>
+                                    </td>
+                                    <td>
+                                        <%=data.Star%>
+                                    </td>
+                                    <td>
+                                        <%=data.Text%>
+                                    </td>
+                                    <td>
+                                        <a href="/delreview/<%=data.Review_id%>"><button>
+                                                Delete
+                                            </button></a>
+                                    </td>
+                                </tr>
+
+                                <%})%>
+                        </tbody>
+                    </table>
+
+                    <%}%>
+
+            </div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>

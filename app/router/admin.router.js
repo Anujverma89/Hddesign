@@ -7,10 +7,10 @@ const router = express.Router();
 const admincontorller = require('../controllers/admin.controller')
 
 // fetching all the admins
-router.get('/', admincontorller.fetchAllAdmins);
+// router.get('/', admincontorller.fetchAllAdmins);
 
 // post adminlist;
-router.post('/', admincontorller.createAdminlist);
+// router.post('/', admincontorller.createAdminlist);
 
 
 // delete admin by id 

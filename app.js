@@ -5,9 +5,11 @@ const cors = require('cors');
 const db = require('./app/dbconfig/db');
 const fileUpload = require('express-fileupload');
 const config = require('./config');
-const {NODE_ENV} = require('./config');
-const helmet= require('helmet');
-// const multer = require('multer');
+const { NODE_ENV } = require('./config');
+const helmet = require('helmet');
+const ejs = require('ejs');
+const cookieParser = require('cookie-parser');
+
 
 
 // importing routers
@@ -19,8 +21,21 @@ const imageRouter = require('./app/router/image.router');
 const reviewRouter = require('./app/router/review.router');
 const socialRouter = require('./app/router/social.router');
 const videoRouter = require('./app/router/video.router');
-const loginRouter = require('./app/router/login.router')
+const loginRouter = require('./app/router/login.router');
+const mangerouter = require('./app/adminrouter/index.roter');
+const review = require('./app/adminrouter/review.router');
+const image = require('./app/adminrouter/image.roter');
+const topicimage = require('./app/adminrouter/imagetopic.router');
+const admin = require('./app/adminrouter/admin.router');
+const clientTopiimage = require("./app/adminrouter/topimgforclient.router");
 
+// delete router
+
+const adminDelete = require("./app/deleterouter/admindelete.router");
+const customerDel = require("./app/deleterouter/customerdelete.router");
+const reviewDel = require("./app/deleterouter/reviewdelete.router");
+const imageDel = require("./app/deleterouter/imagedelete.router");
+const topicDel = require("./app/deleterouter/Topicimagedelete.router");
 
 
 
@@ -42,11 +57,19 @@ app.use(express.json());
 // parse requests of content-type: application/x-www-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
 
+// setting view emgine
+app.set('view engine', 'ejs');
+
+// using cookie parser;
+app.use(cookieParser());
+
+
 // app.use express.static
 app.use(express.static(process.cwd() + "/public/dist/hdDesign"));
 app.use(express.static(process.cwd() + "/public/images"));
 app.use(express.static(process.cwd() + "/public/images/gallery"));
-app.use(express.static(process.cwd() + "/public/distadmin/hdDesign"))
+app.use(express.static(process.cwd() + "/public/images/topicimage"));
+
 
 
 
@@ -65,13 +88,19 @@ app.use(fileUpload());
 
 
 
+
+
 // simple route
 app.get("/", (req, res) => {
   res.status(200).sendFile(process.cwd() + "/public/dist/hdDesign/index.html");
 });
 
-app.get("/manage", (req, res) => {
-  res.status(200).sendFile(process.cwd() + "/public/distadmin/hdDesign/index.html");
+
+// logout function clearing restored cookie.
+app.get('/logout', (req, res) => {
+  res.clearCookie("jwtToken")
+  res.status(300).redirect('/login');
+
 })
 
 
@@ -83,6 +112,25 @@ app.use('/review', reviewRouter);
 app.use('/social', socialRouter);
 app.use('/video', videoRouter);
 app.use('/login', loginRouter);
+app.use('/topicimage', clientTopiimage);
+
+// admin router
+app.use('/manage', mangerouter);
+app.use('/adminreview', review);
+app.use('/adminimage', image);
+app.use('/topimage', topicimage);
+app.use('/adminmain', admin);
+
+app.use("/deladmin", adminDelete);
+app.use("/delcustomer", customerDel);
+app.use("/delreview", reviewDel);
+app.use('/delimage', imageDel);
+app.use("/deltopic", topicDel);
+// delete request
+
+
+
+
 
 console.log(NODE_ENV);
 

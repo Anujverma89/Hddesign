@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- iocluding ejs head file -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+
+    <title>Admin panel || Gallery_Image section</title>
+</head>
+
+
+<body>
+
+    <style>
+        .imagetopic {
+            height: 40px;
+            width: 40px;
+        }
+
+
+
+        /* tablle style */
+        /* styling image table */
+
+        /* table desing */
+
+        .fa-trash {
+            color: red;
+            cursor: pointer;
+        }
+
+        .fa-pen {
+            color: rgb(216, 128, 14);
+        }
+
+
+        thead {
+            background-color: antiquewhite;
+        }
+
+        th {
+            margin: 40px;
+        }
+
+        table,
+        td,
+        th {
+            padding-left: 20px;
+            padding-right: 20px;
+            text-align: center;
+            margin: auto;
+        }
+
+        table {
+            margin: 30px;
+        }
+
+        tr:nth-child(odd) {
+            background-color: rgb(66, 235, 241);
+        }
+
+        thead,
+        th,
+        tr,
+        td {
+            border: 1px solid;
+        }
+
+        .imagebox {
+
+            height: 40px;
+            width: 40px;
+        }
+
+        .for2mbody {
+            background-color: aqua;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-radius: 20px;
+            margin-top: 50px;
+        }
+
+        /* inpput validdation */
+
+        input.ng-touched.ng-invalid {
+            border-left: 20px solid red;
+        }
+    </style>
+
+
+
+    <!-- header section -->
+    <section>
+        <%-include('../partials/header')%>
+    </section>
+
+
+    <!-- tempelate driven form -->
+    <!-- post foorm -->
+
+
+
+
+
+
+
+    <div class="conatiner-fluid">
+        <div class="row justify-content-center align-items-center">
+
+            <div class="col-sm-12 col-xl-6 col-lg-6 col-md-6 align-items-center justify-content-center text-center"
+                style="background-color: antiquewhite ; border-radius: 25px; margin-bottom: 40px; margin-top: 40px;">
+
+                <h1>
+                    Upload Topic Image
+                </h1>
+
+                <div>
+
+
+                    <% if(message.length !==0){%>
+
+                        <div class="alert alert-success">
+                            <%=message%>
+
+                        </div>
+
+                        <%}%>
+                </div>
+
+
+
+
+
+                <form action="/topimage" method="POST" autocomplete="off" enctype="multipart/form-data">
+                    <div class="form-group">
+                        <label for="Service">Topic</label>
+                        <input type="text" class="form-control" id="exampleInputPassword1" name="Topic"
+                            placeholder="Service Here" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="Imageurl">Imageurl 1</label>
+                        <input type="file" class="form-control" id="Imageurl" name="Image1" placeholder="Url Here"
+                            required multiple>
+                    </div>
+                    <div class="form-group">
+                        <label for="Imageurl">Imageurl 2</label>
+                        <input type="file" class="form-control" id="Imageurl" name="Image2" placeholder="Url Here"
+                            required multiple>
+                    </div>
+                    <div class="form-group">
+                        <label for="Imageurl">Imageurl 3</label>
+                        <input type="file" class="form-control" id="Imageurl" name="Image3" placeholder="Url Here"
+                            required multiple>
+                    </div>
+                    <div class="form-group">
+                        <label for="Imageurl">Imageurl 4 </label>
+                        <input type="file" class="form-control" id="Imageurl" name="Image4" placeholder="Url Here"
+                            required multiple>
+                    </div>
+                    <div class="form-group">
+                        <label for="Imageurl">Imageurl 5</label>
+                        <input type="file" class="form-control" id="Imageurl" name="Image5" placeholder="Url Here"
+                            required multiple>
+                    </div>
+                    <div class="form-group">
+                        <label for="Imageurl">Imageurl 6</label>
+                        <input type="file" class="form-control" id="Imageurl" name="Image6" placeholder="Url Here"
+                            required multiple>
+                    </div>
+                    <div class="form-group">
+                        <label for="Imageurl">Imageurl 7</label>
+                        <input type="file" class="form-control" id="Imageurl" name="Image7" placeholder="Url Here"
+                            required multiple>
+                    </div>
+                    <div class="form-group">
+                        <label for="Imageurl">Imageurl 8</label>
+                        <input type="file" class="form-control" id="Imageurl" name="Image8" placeholder="Url Here"
+                            required multiple>
+                    </div>
+                    <div class="form-group">
+                        <label for="Imageurl">Imageurl 9</label>
+                        <input type="file" class="form-control" id="Imageurl" name="Image9" placeholder="Url Here"
+                            required multiple>
+                    </div>
+                    <div class="form-group">
+                        <label for="Imageurl">Imageurl 10</label>
+                        <input type="file" class="form-control" id="Imageurl" name="Image10" placeholder="Url Here"
+                            required multiple>
+                    </div>
+
+
+
+                    <button type="submit" class="btn btn-primary"
+                        [disabled]="imageform.invalid || imageform.untouched">Submit</button>
+                </form>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- immage div -->
+
+
+
+    <hr>
+
+    <div class="container-fluid">
+        <div class="row justify-content-center align-items-center">
+
+            <div class="col-sm-12 col-lg-12 col-md-12 col-xl-12 justify-content-center align-items-center"
+                style="display: flex; justify-content: center; align-items: center; margin-bottom: 40px;">
+
+
+
+                <% if(data !=="" ){%>
+
+                    <table>
+                        <thead>
+                            <th>ID</th>
+                            <th>Topic</th>
+                            <th>Image_1</th>
+                            <th>IMage_2</th>
+                            <th>IMage_3</th>
+                            <th>IMage_4</th>
+                            <th>IMage_5</th>
+                            <th>IMage_6</th>
+                            <th>IMage_7</th>
+                            <th>IMage_8</th>
+                            <th>IMage_9</th>
+                            <th>IMage_10</th>
+                            <th>Delete</th>
+                        </thead>
+
+                        <tbody>
+
+
+                            <%data.forEach(function(data){%>
+
+                                <tr>
+                                    <td>
+                                        <%=data.G_Id%>
+                                    </td>
+                                    <td>
+                                        <%=data.Topic%>
+                                    </td>
+                                    <td>
+                                        <img src="<%=data.Image_1%>" alt="Image_1" class="imagetopic">
+                                    </td>
+                                    <td>
+                                        <img src="<%=data.Image_2%>" alt="Image_1" class="imagetopic">
+                                    </td>
+                                    <td>
+                                        <img src="<%=data.Image_3%>" alt="Image_1" class="imagetopic">
+                                    </td>
+                                    <td>
+                                        <img src="<%=data.Image_4%>" alt="Image_1" class="imagetopic">
+                                    </td>
+                                    <td>
+                                        <img src="<%=data.Image_5%>" alt="Image_1" class="imagetopic">
+                                    </td>
+                                    <td>
+                                        <img src="<%=data.Image_6%>" alt="Image_1" class="imagetopic">
+                                    </td>
+                                    <td>
+                                        <img src="<%=data.Image_7%>" alt="Image_1" class="imagetopic">
+                                    </td>
+                                    <td>
+                                        <img src="<%=data.Image_8%>" alt="Image_1" class="imagetopic">
+                                    </td>
+                                    <td>
+                                        <img src="<%=data.Image_9%>" alt="Image_1" class="imagetopic">
+                                    </td>
+                                    <td>
+                                        <img src="<%=data.Image_10%>" alt="Image_1" class="imagetopic">
+                                    </td>
+                                    <td> <a href="/deltopic/<%=data.G_Id%>">
+                                            <button>Delete</button>
+                                        </a></td>
+                                </tr>
+
+                                <%})%>
+
+
+
+
+
+
+                        </tbody>
+                    </table>
+                    <%}%>
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+    <!-- bottom script start  -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+
+    <!-- bottom script end -->
+
+
+</body>
+
+</html>

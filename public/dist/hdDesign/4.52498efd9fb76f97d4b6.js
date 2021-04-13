@@ -1,1 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{lehC:function(n,o,t){"use strict";t.r(o),t.d(o,"ContentModule",function(){return a});var e=t("ofXK"),r=t("G98L"),c=t("ToOs"),s=t("3Pt+"),u=t("JqCM"),i=t("fXoL");let a=(()=>{class n{}return n.\u0275mod=i.Hb({type:n}),n.\u0275inj=i.Gb({factory:function(o){return new(o||n)},imports:[[e.b,r.a,c.a,s.j,s.c,u.b]]}),n})()}}]);

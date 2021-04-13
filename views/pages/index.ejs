@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- iocluding ejs head file -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+    <!-- bootstarp link -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <title>Admin panel || Customer_leads</title>
+</head>
+
+
+<!-- body section starts here -->
+
+<body>
+
+    <style>
+        .fa-trash {
+            color: red;
+            cursor: pointer;
+        }
+
+        .fa-pen {
+            color: rgb(216, 128, 14);
+        }
+
+
+        thead {
+            background-color: antiquewhite;
+        }
+
+        th {
+            margin: 40px;
+        }
+
+        table,
+        td,
+        th {
+            padding-left: 20px;
+            padding-right: 20px;
+            text-align: center;
+            margin: auto;
+        }
+
+        table {
+            margin: 30px;
+        }
+
+        tr:nth-child(odd) {
+            background-color: rgb(66, 235, 241);
+        }
+
+        thead,
+        th,
+        tr,
+        td {
+            border: 1px solid;
+        }
+
+        .imagebox {
+
+            height: 40px;
+            width: 40px;
+        }
+
+        .for2mbody {
+            background-color: aqua;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-radius: 20px;
+            margin-top: 50px;
+        }
+
+        /* inpput validdation */
+
+        input.ng-touched.ng-invalid {
+            border-left: 20px solid red;
+        }
+    </style>
+
+
+
+    <section>
+        <!-- header -->
+        <%-include('../partials/header.ejs')%>
+
+    </section>
+
+    <div class="conatiner-fluid">
+        <div class="row justify-content-center align-items-center">
+
+            <div class="col-sm-12 col-xl-9 col-lg-9 col-md-9 justify-content-center align-items-center text-center"
+                style="background-color: rgb(241, 220, 220);">
+                <div class="table"
+                    style="display: flex; justify-content: center; text-align: center; flex-direction: column;">
+                    <div class="row align-items-center justify-content-center text-center">
+                        <h1>Customer List</h1>
+
+
+                    </div>
+
+
+
+
+
+                    <Table>
+                        <thead>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Mobile No</th>
+                            <th>City</th>
+                            <th>Email_ID</th>
+                            <th>Service </th>
+                            <th>Message</th>
+                            <th>Delete</th>
+                        </thead>
+                        <tbody>
+
+                            <% data.forEach(function(data){%>
+                                <tr>
+                                    <td>
+                                        <%=data.Id%>
+                                    </td>
+                                    <td>
+                                        <%=data.Name%>
+                                    </td>
+                                    <td>
+                                        <%=data.Mobileno%>
+                                    </td>
+                                    <td>
+                                        <%=data.City%>
+                                    </td>
+                                    <td>
+                                        <%=data.Email_id%>
+                                    </td>
+                                    <td>
+                                        <%=data.Services%>
+                                    </td>
+                                    <td>w
+                                        <%=data.Text%>
+                                    </td>
+                                    <td>
+                                        <a href="/delcustomer/<%=data.Id%>"><button>Delete</button></a>
+                                    </td>
+                                </tr>
+
+                                <%})%>
+
+                        </tbody>
+
+                    </Table>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+
+        function Delete() {
+
+        }
+
+    </script>
+
+
+
+    <!-- including botton scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>

@@ -10,7 +10,7 @@ const Amdinlist = (Admin) => {
     this.Name = Admin.Name;
     this.Phoneno = Admin.Phoneno;
     this.Email = Admin.Email;
-    SHA2(this.Password) = Admin.Password;
+    this.Password = Admin.Password;
 
 }
 
@@ -42,7 +42,7 @@ Amdinlist.createAdminlist = (admindata, result) => {
             else {
 
                 let payLoad = { subject: admindata.Email }
-                // verify is the id 
+                // verify secret key for sigining the token  
                 let token = jwt.sign(payLoad, 'verify')
 
                 dbconn.query('INSERT INTO Admin SET Name=?,Phoneno=?,Email=?,Password=sha1(?),Token=?', [admindata.Name, admindata.Phoneno, admindata.Email, admindata.Password, token], (err, res) => {
@@ -95,6 +95,27 @@ Amdinlist.getAdminListId = (Admin_id, result) => {
             else {
                 result(null, res);
                 console.log("fetched data successfully");
+            }
+
+        }
+    })
+
+}
+// get admin list by token
+Amdinlist.getAdminListByEmail = (Email, result) => {
+    dbconn.query('SELECT * FROM Admin where Email=?', Email, (err, res) => {
+        if (err) {
+            console.log("Error while fetching data", err);
+            result(null, err);
+        } else {
+            if (res.length == 0) {
+                console.log("no data found");
+                result(null, res);
+                return;
+            }
+            else {
+                result(null, res);
+                console.log("User is authentic");
             }
 
         }

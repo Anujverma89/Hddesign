@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- iocluding ejs head file -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <title>Login page</title>
+</head>
+
+<body>
+
+    <!-- style tag starts herre -->
+
+
+    <style>
+        /* main cont */
+
+        .maincont {
+            background-color: rgb(0, 129, 129);
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .mainrow {
+            justify-content: center;
+            align-items: center;
+        }
+
+        .maincol {
+            background-color: rgb(29, 204, 189);
+            text-align: center;
+            color: white;
+            font-size: 20px;
+            border-radius: 20px;
+            box-shadow: 0px 0px 10px 5px rgb(255, 255, 255);
+            width: 90%;
+        }
+    </style>
+
+
+    <!-- style tag ends here -->
+
+    <!-- Login form  desing-->
+
+    <div class="conatiner-fluid maincont">
+
+
+        <div class="container loginconatoner">
+            <div class="row mainrow">
+
+                <div class="col-sm-12 col-lg-6 col-md-9 col-xl-6 maincol">
+
+
+                    <img src="../../assets/hdlogo.png" alt="">
+
+                    <div class="div">
+                        <% if(message !="" ) {%>
+                            <div class="alert alert-danger">
+                                <%=message%>
+
+                            </div>
+                            <%} %>
+                    </div>
+
+                    <form method="POST" action="/login">
+                        <div class="form-group">
+                            <label for="Username">Email</label>
+                            <input type="email" class="form-control" ngModel id="username" name="Email"
+                                placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" ngModel id="password" name="Password"
+                                placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+
+                    </form>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- bootom script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+        crossorigin="anonymous"></script>
+    <!-- bottom script ends -->
+</body>
+
+</html>

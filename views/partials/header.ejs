@@ -1,0 +1,72 @@
+
+<div class="navbar">
+    <div class="logoimage">
+        <img src="../../assets/hdlogo.png" alt="">
+
+    </div>
+    <div class="navlink">
+        <ul class="mainlink">
+            <li><a href="/manage">Leads</a></li>
+            <li><a href="/adminreview">Reviews</a></li>
+            <li> <a href="/adminimage">Image</a></li>
+            <li><a href="/topimage">Gallery</a></li>
+            <li> <a href="/adminmain">Admin</a></li>
+        </ul>
+
+    </div>
+    <div class="button">
+        <a href="/logout"><button class="btn btn-primary">LogOut</button></a>
+
+    </div>
+</div>
+
+
+
+<style>
+    html {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .navbar {
+        background-color: red;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .navlink li a {
+        text-decoration: none;
+        font-size: 25px;
+        font-weight: bold;
+    }
+
+    .navlink li {
+        list-style: none;
+    }
+
+    .mainlink {
+        display: flex;
+        padding: 5px;
+        justify-content: space-around;
+        gap: 25px;
+    }
+
+    a:active {
+        background: #29abe2;
+        color: #fff;
+        border-radius: 5px;
+    }
+
+    .button {
+        padding-right: 10px;
+    }
+
+    .navlink {
+        display: flex;
+        border-radius: 30px;
+        background-color: moccasin;
+        border: 5px solid white;
+        align-items: center;
+        padding-top: 10px;
+    }
+</style>
